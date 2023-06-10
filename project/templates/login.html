@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid bg-light" style="display: grid;place-items: center;height: 100vh;">
+    <div class="container mx-auto shadow bg-white py-3" style="max-width: 600px;">
+        <h2 class="text-center">Login</h2>
+        <div class="text-center my-2">
+            <span class="text-danger">{{error}}</span>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+           <input required type="text" class="form-control mb-2" name="username" placeholder="Username">
+           <input required type="text" class="form-control mb-2" name="password" placeholder="Password">
+           <button class="btn btn-primary">Login</button>
+        </form>
+        <div class="text-center d-flex align-items-center mt-3">
+            <span>Don't have an Account?</span>
+            <a href="/registration" class="nav-link mx-2 text-primary">Registration</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
